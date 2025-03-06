@@ -1,0 +1,29 @@
+/* Establecer la fuente por defecto a 16px */
+html {
+    font-size: 16px;
+  }
+  
+  /* El h1 tiene que tener el doble del tamaño de la fuente por defecto */
+  h1 {
+    font-size: 2em; /* 2 veces el tamaño de la fuente por defecto */
+  }
+  
+  /* El ancho máximo del main tiene que ser de 1000px */
+  main {
+    max-width: 1000px;
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 1rem; /* 16px en unidades relativas (1rem equivale al tamaño de la fuente por defecto) */
+  }
+  
+  /* Padding del footer utilizando unidades relativas */
+  footer {
+    padding: 1rem; /* 16px en unidades relativas */
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  /* Ajustar el alto de la imagen con una unidad absoluta */
+  header img {
+    height: 100px; /* Ajuste absoluto según el ejemplo */
+  }
+  
