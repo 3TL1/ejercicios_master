@@ -1,0 +1,138 @@
+/* Variables de color */
+:root {
+    --primary-color: rgb(236, 236, 236);
+    --color-secundario: rgb(21, 21, 21);
+    --color-azul: #2bc5cd;
+    --color-naranja: #ff693d;
+    --border: 2px solid var(--color-azul);
+    --espaciado: 20px;
+    --fuente: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    font-family: var(--fuente);
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: var(--espaciado);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--espaciado);
+    max-width: 900px;
+  }
+  
+  /* Distribución de las áreas del Grid */
+  .header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: var(--color-azul);
+    color: white;
+    padding: var(--espaciado);
+  }
+  
+  .school {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-image: url('https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg');
+    background-size: cover;
+  }
+  
+  .student {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    background-image: url('https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg');
+    background-size: cover;
+  }
+  
+  .main {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .time {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-image: url('https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg');
+    background-size: cover;
+  }
+  
+  .alumni {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    background-image: url('https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg');
+    background-size: cover;
+  }
+  
+  .footer {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    background-color: var(--color-naranja);
+    color: white;
+    padding: var(--espaciado);
+    text-align: center;
+  }
+  
+  .footer button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Responsive para móviles */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto auto auto auto;
+    }
+  
+    .header {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    .school {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  
+    .student {
+      grid-column: 1;
+      grid-row: 3;
+    }
+  
+    .main {
+      grid-column: 1;
+      grid-row: 4;
+    }
+  
+    .time {
+      grid-column: 1;
+      grid-row: 5;
+    }
+  
+    .alumni {
+      grid-column: 1;
+      grid-row: 6;
+    }
+  
+    .footer {
+      grid-column: 1;
+      grid-row: 7;
+    }
+  }
+  
