@@ -1,0 +1,82 @@
+// ================================
+// Ejercicio 3
+// ================================
+
+// 1.1 Crear una lista ul > li dinámicamente con los países
+const countries = ["Japón", "Nicaragua", "Suiza", "Australia", "Venezuela"];
+const ulCountries = document.createElement("ul");
+
+countries.forEach((country) => {
+  const li = document.createElement("li");
+  li.textContent = country;
+  ulCountries.appendChild(li);
+});
+
+document.body.appendChild(ulCountries);
+
+// 1.2 Eliminar el elemento con la clase .fn-remove-me
+const elementToRemove = document.querySelector(".fn-remove-me");
+if (elementToRemove) {
+  elementToRemove.remove();
+}
+
+// 1.3 Crear una lista ul > li de coches dentro del div con data-function="printHere"
+const cars = ["Mazda 6", "Ford fiesta", "Audi A4", "Toyota corola"];
+const divPrintHere = document.querySelector('div[data-function="printHere"]');
+
+if (divPrintHere) {
+  const ulCars = document.createElement("ul");
+
+  cars.forEach((car) => {
+    const li = document.createElement("li");
+    li.textContent = car;
+    ulCars.appendChild(li);
+  });
+
+  divPrintHere.appendChild(ulCars);
+}
+
+// 1.4 Crear divs con h4 para el título y img para la imagen
+const countriesWithImages = [
+  { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=1" },
+  { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=2" },
+  { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=3" },
+  { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=4" },
+  { title: "Random title", imgUrl: "https://picsum.photos/300/200?random=5" },
+];
+
+const container = document.createElement("div");
+document.body.appendChild(container);
+
+countriesWithImages.forEach((country, index) => {
+  const countryDiv = document.createElement("div");
+
+  const h4 = document.createElement("h4");
+  h4.textContent = country.title;
+
+  const img = document.createElement("img");
+  img.src = country.imgUrl;
+  img.alt = country.title;
+
+  // 1.6 Crear un botón para eliminar este div
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Eliminar";
+  deleteButton.addEventListener("click", () => countryDiv.remove());
+
+  countryDiv.appendChild(h4);
+  countryDiv.appendChild(img);
+  countryDiv.appendChild(deleteButton);
+  container.appendChild(countryDiv);
+});
+
+// 1.5 Crear un botón que elimine el último div de la serie
+const deleteLastButton = document.createElement("button");
+deleteLastButton.textContent = "Eliminar último elemento";
+deleteLastButton.addEventListener("click", () => {
+  const allDivs = container.querySelectorAll("div");
+  if (allDivs.length > 0) {
+    allDivs[allDivs.length - 1].remove();
+  }
+});
+
+document.body.appendChild(deleteLastButton);
